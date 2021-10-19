@@ -1,0 +1,9 @@
+﻿<Application x:Class="WpfCource_ProjectTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfCource_ProjectTest"
+             StartupUri="View/MainWindowMenu.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
