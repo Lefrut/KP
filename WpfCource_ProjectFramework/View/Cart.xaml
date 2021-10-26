@@ -1,0 +1,66 @@
+﻿<Page x:Class="WpfCource_ProjectFramework.View.Cart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCource_ProjectFramework.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Cart">
+    <Grid Background="#FF1ED760">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Border BorderBrush="Black" BorderThickness="0,0,0,3"></Border>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Карточка читателя: " Style="{DynamicResource Style_TextBock}"></TextBlock>
+                <TextBlock Text="{Binding Имя}" Style="{DynamicResource Style_TextBock}"></TextBlock>
+                <TextBlock Text="{Binding Фамилия}" Style="{DynamicResource Style_TextBock}"></TextBlock>
+                <TextBlock Text="{Binding Отчество}" Style="{DynamicResource Style_TextBock}"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock Text="Выдача книг" Style="{DynamicResource Style_TextBock}" HorizontalAlignment="Center"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <DataGrid Background="#FF1ED760" Name="DGridGiveBooks"
+                      AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Height="20" Background="#FF1ED760" Foreground="Black"
+                                        Content="Вернуть книгу" FontSize="10" Width="90" Click="DeleteBook_Click"
+                                        BorderBrush="Black" BorderThickness="2"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Номер выдачи" Binding="{Binding Номер_выдачи}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Номер читателя" Binding="{Binding Номер_читателя}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Номер книги" Binding="{Binding Номер_книги}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дача выдачи" Binding="{Binding Дача_выдачи}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата сдачи" Binding="{Binding Дата_сдачи}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Номер сотрудника" Binding="{Binding Номер_сотрудника}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock x:Name="Dep" Style="{DynamicResource Style_TextBock}" Text="Должник" HorizontalAlignment="Center"
+                           FontSize="40" Height="60" Visibility="Hidden"></TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

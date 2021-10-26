@@ -22,7 +22,7 @@
                               Width="{TemplateBinding Width}">  
                             <Border BorderThickness="2.5" CornerRadius="8" Background="{TemplateBinding Background}" 
                                     BorderBrush="{TemplateBinding BorderBrush}"></Border>
-                            <TextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0"
+                            <TextBox x:Name="TextBox" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0"
                                 Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}"
                                      Background="Transparent" Width="340"
                                      BorderThickness="0"></TextBox>
@@ -44,7 +44,7 @@
                               Width="{TemplateBinding Width}">
                             <Border BorderThickness="2.5" CornerRadius="8" Background="{TemplateBinding Background}" 
                                     BorderBrush="{TemplateBinding BorderBrush}"></Border>
-                            <PasswordBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0"
+                            <PasswordBox x:Name="Password" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0"
                                 Foreground="{TemplateBinding Foreground}"
                                      Background="Transparent" Width="340"
                                      BorderThickness="0"></PasswordBox>
@@ -81,20 +81,21 @@
         <Grid Name="RegisterContainer" Grid.Row="2">
             <StackPanel>
                 <TextBlock Text="Логин" Margin="20,10,20,0" FontSize="25" Foreground="White"></TextBlock>
-                <TextBox x:Name="tb1" Style="{StaticResource TB}" Margin="20,4,20,0" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="tb1" Height="45" Margin="20,4,20,0" VerticalAlignment="Top"
+                         BorderBrush="#FF1DB954" BorderThickness="3" Background="#FFACB7AC"
+                         VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                         FontSize="20"></TextBox>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Пароль" Margin="20,110,20,0" FontSize="25" Foreground="White">
                 </TextBlock>
-                <PasswordBox x:Name="tb2" Style="{StaticResource PB}" Margin="20,4,20,0" VerticalAlignment="Top"></PasswordBox>
+                <PasswordBox FontSize="20"
+                    VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                    BorderBrush="#FF1DB954" BorderThickness="3" Background="#FFACB7AC"
+                    x:Name="tb2" Height="45" Margin="20,4,20,0" VerticalAlignment="Top"></PasswordBox>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal">
-                <CheckBox Width="20" Height="20" Margin="20,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"
-                          BorderThickness="1.2" BorderBrush="#FF1DB954" Background="#FFACB7AC"></CheckBox>
-                <ContentControl Content="Оставаться в сети?" Foreground="White" VerticalAlignment="Top" FontSize="12"></ContentControl>
-            </StackPanel>
             <Button x:Name="login" Click="Button_Login" Height="50" Margin="20,30,20,0" VerticalAlignment="Top">
                 <Button.Style>
                     <Style TargetType="Button">

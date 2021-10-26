@@ -32,6 +32,37 @@ namespace WpfCource_ProjectFramework.View
                 DragMove();
             }
         }
+
+        private void ButtonClick_ListBooks(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ListBooks());
+        }
+
+        private void Exit_Down(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+            
+        }
+
+        private void Tir_Down(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ButtonClick_StaticPage(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new StaticPage());
+        }
+
+        private void ButtonClick_RedersPage(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ReadersPage());
+        }
+
+        private void ButtonClick_DeptorPage(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new DeptorPage());
+        }
     }
 
 }

@@ -13,44 +13,28 @@ namespace WpfCource_ProjectFramework.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
-        private Page MainPage = new MainPage();
-        private Page SearchPage = new SearchPage();
-        private Page MyBooksPage = new MyBooksPage();
-        private Page BasketPage = new BasketPage();
-        private Page _CurPage = new MainPage();
-        public Page CurPage
-        {
-            get => _CurPage;
-            set => Set(ref _CurPage, value);
-        }
+        //private page mainpage = new mainpage();
+        //private page mybookspage = new mybookspage();
+        //private page _curpage = new mainpage();
+        //public page curpage
+        //{
+        //    get => _curpage;
+        //    set => set(ref _curpage, value);
+        //}
 
-        public ICommand OpenMainPage
-        {
-            get
-            {
-                return new RelayCommand(() => CurPage = MainPage);
-            }
-        }
-        public ICommand OpenSearchPage
-        {
-            get
-            {
-                return new RelayCommand(() => CurPage = SearchPage);
-            }
-        }
-        public ICommand OpenMyBooksPage
-        {
-            get
-            {
-                return new RelayCommand(() => CurPage = MyBooksPage);
-            }
-        }
-        public ICommand OpenBasketPage
-        {
-            get
-            {
-                return new RelayCommand(() => CurPage = BasketPage);
-            }
-        }
+        //public icommand openmainpage
+        //{
+        //    get
+        //    {
+        //        return new relaycommand(() => curpage = mainpage);
+        //    }
+        //}
+        //public icommand openmybookspage
+        //{
+        //    get
+        //    {
+        //        return new relaycommand(() => curpage = mybookspage);
+        //    }
+        //}
     }
 }

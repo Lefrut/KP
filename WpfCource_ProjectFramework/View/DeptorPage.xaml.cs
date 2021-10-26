@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace WpfCource_ProjectFramework.View
 {
     /// <summary>
-    /// Логика взаимодействия для Search.xaml
+    /// Логика взаимодействия для DeptorPage.xaml
     /// </summary>
-    public partial class SearchPage : Page
+    public partial class DeptorPage : Page
     {
-        public SearchPage()
+        public DeptorPage()
         {
             InitializeComponent();
+            DGridGiveBooks.ItemsSource = KPEntities.GetContext().Выдача_книг.ToList();
         }
     }
 }

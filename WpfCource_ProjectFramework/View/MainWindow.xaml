@@ -111,18 +111,14 @@
             <Border>
             </Border>
             <StackPanel>
-                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Главная" 
-                        Command="{Binding OpenMainPage}"></Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Статистика" 
+                        Click="ButtonClick_StaticPage" ></Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Список книг"
-                        Command="{Binding OpenMyBooksPage}"></Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Поиск"
-                        Command="{Binding OpenSearchPage}"></Button>
+                        Click="ButtonClick_ListBooks"></Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Читатели"
-                        Command="{Binding OpenMyBooksPage}"></Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Корзина"
-                        Command="{Binding OpenBasketPage}"></Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Мои Книги"
-                        Command="{Binding OpenMyBooksPage}"></Button>
+                        Click="ButtonClick_RedersPage" ></Button>
+                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Задолжники"
+                        Click="ButtonClick_DeptorPage" ></Button>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1" >
@@ -130,9 +126,13 @@
                 <RowDefinition Height="25"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding CurPage}"></Frame>
+            <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
             <Grid Name="TopMenu" Grid.Row="0">
                 <Border MouseDown="Border_MouseDown" Background="#FF2B2B2B"></Border>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Source="Res\Icons\tirgreen.png" Width="22" Margin="0,0,8,0" MouseDown="Exit_Down"></Image>
+                    <Image Source="Res\Icons\pngegg.png" Width="26" Height="18" Margin="0,0,2,0" MouseDown="Tir_Down"></Image>
+                </StackPanel>
             </Grid>
         </Grid>
     </Grid>

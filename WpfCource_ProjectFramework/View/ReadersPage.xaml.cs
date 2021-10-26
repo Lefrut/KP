@@ -16,13 +16,19 @@ using System.Windows.Shapes;
 namespace WpfCource_ProjectFramework.View
 {
     /// <summary>
-    /// Логика взаимодействия для BasketPage.xaml
+    /// Логика взаимодействия для ReadersPage.xaml
     /// </summary>
-    public partial class BasketPage : Page
+    public partial class ReadersPage : Page
     {
-        public BasketPage()
+        public ReadersPage()
         {
             InitializeComponent();
+            DGridReaders.ItemsSource = KPEntities.GetContext().Читатели.ToList();
+        }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Cart((sender as Button).DataContext as Читатели));
         }
     }
 }

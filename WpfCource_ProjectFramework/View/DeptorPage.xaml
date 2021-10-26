@@ -1,0 +1,31 @@
+﻿<Page x:Class="WpfCource_ProjectFramework.View.DeptorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCource_ProjectFramework.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DeptorPage">
+
+    <Grid Background="#FF1ED760">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="180"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Border BorderBrush="#FF1ED760" BorderThickness="0,0,2,0"></Border>
+            <DataGrid Background="#FF1ED760" Name="DGridGiveBooks"
+                      AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер выдачи" Binding="{Binding Номер_выдачи}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Номер читателя" Binding="{Binding Номер_читателя}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Номер книги" Binding="{Binding Номер_книги}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дача выдачи" Binding="{Binding Дача_выдачи}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата сдачи" Binding="{Binding Дата_сдачи}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Номер сотрудника" Binding="{Binding Номер_сотрудника}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

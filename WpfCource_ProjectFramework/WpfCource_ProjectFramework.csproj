@@ -59,6 +59,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -80,23 +82,86 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="KPModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KPModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KPModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KPModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KPModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>KPModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="View\BasketPage.xaml.cs">
-      <DependentUpon>BasketPage.xaml</DependentUpon>
+    <Compile Include="View\Admin.cs" />
+    <Compile Include="View\Cart.xaml.cs">
+      <DependentUpon>Cart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeptorPage.xaml.cs">
+      <DependentUpon>DeptorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GiveBooksInterface.xaml.cs">
+      <DependentUpon>GiveBooksInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListBooks.xaml.cs">
+      <DependentUpon>ListBooks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListBooksInterface.xaml.cs">
+      <DependentUpon>ListBooksInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainLoginMenu.xaml.cs">
       <DependentUpon>MainLoginMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="View\ReadersPage.xaml.cs">
+      <DependentUpon>ReadersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MyBooksPage.xaml.cs">
-      <DependentUpon>MyBooksPage.xaml</DependentUpon>
+    <Compile Include="View\StaticPage.xaml.cs">
+      <DependentUpon>StaticPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SearchPage.xaml.cs">
-      <DependentUpon>SearchPage.xaml</DependentUpon>
+    <Compile Include="Авторы.cs">
+      <DependentUpon>KPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Выдача_книг.cs">
+      <DependentUpon>KPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Книги.cs">
+      <DependentUpon>KPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Сотрудники.cs">
+      <DependentUpon>KPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Читатели.cs">
+      <DependentUpon>KPModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="View\Cart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeptorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GiveBooksInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListBooksInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainLoginMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,21 +178,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\BasketPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\ReadersPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\StaticPage.xaml">
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MyBooksPage.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SearchPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +205,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="KPModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KPModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KPModel.edmx.diagram">
+      <DependentUpon>KPModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -190,6 +254,21 @@
   <ItemGroup>
     <Resource Include="View\Res\Icons\1.png" />
     <Resource Include="View\Res\Icons\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KPModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KPModel.edmx</DependentUpon>
+      <LastGenOutput>KPModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KPModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KPModel.edmx</DependentUpon>
+      <LastGenOutput>KPModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
