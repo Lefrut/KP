@@ -53,7 +53,7 @@ namespace WpfCource_ProjectFramework.View
             //MessageBox.Show(user);
             //MessageBox.Show($"{pass}");
             //MessageBox.Show(tb1.Text);
-            if (user==null){
+            if (user!=null){
                 MainWindow Main = new MainWindow();
                 Main.Show();
                 this.Close();
@@ -68,7 +68,7 @@ namespace WpfCource_ProjectFramework.View
                 //MessageBox.Show(admin);
                 //MessageBox.Show($"{pass}");
                 //MessageBox.Show(tb1.Text);
-                if (Admin.admin == null)
+                if (Admin.admin != null)
                 {
                     MainWindow Main = new MainWindow();
                     Main.Show();

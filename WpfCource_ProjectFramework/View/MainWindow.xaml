@@ -117,9 +117,12 @@
                         Click="ButtonClick_ListBooks"></Button>
                 <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Читатели"
                         Click="ButtonClick_RedersPage" ></Button>
-                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Задолжники"
+                <Button Template="{StaticResource ResourceKey=SlideMenuButtons}" Content="Выдача книг"
                         Click="ButtonClick_DeptorPage" ></Button>
             </StackPanel>
+            <Button Content="Авторизация"
+                        Click="Back" VerticalAlignment="Bottom" Height="45" Background="#FF1ED760"
+                    FontSize="20"></Button>
         </Grid>
         <Grid Grid.Column="1" >
             <Grid.RowDefinitions>

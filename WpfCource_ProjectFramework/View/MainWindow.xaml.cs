@@ -63,6 +63,14 @@ namespace WpfCource_ProjectFramework.View
         {
             MainFrame.Navigate(new DeptorPage());
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            MainLoginMenu login = new MainLoginMenu();
+            login.Show();
+            this.Close();
+            
+        }
     }
 
 }
